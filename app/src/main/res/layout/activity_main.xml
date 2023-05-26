@@ -132,7 +132,7 @@
                     android:layout_width="116dp"
                     android:layout_height="50dp"
                     android:layout_marginVertical="10dp"
-                    android:background="@drawable/border"
+                    android:background="@drawable/border_spinner"
                     android:hint="0"
                     android:inputType="number"
                     android:padding="10dp"/>
@@ -140,14 +140,14 @@
 
                 <Spinner
                     android:id="@+id/spBimestre"
-                    android:layout_width="111dp"
+                    android:layout_width="154dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="60dp"
-                    android:backgrund="@drawable/border"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/border_spinner"
                     android:contentDescription="Selecione"
                     android:orientation="vertical"
-                    android:padding="10dp"/>
+                    android:padding="10dp" />
 
 
             </LinearLayout>
@@ -166,6 +166,7 @@
                     android:layout_height="50dp"
                     android:padding="10dp"
                     />
+
                 <Button
                     android:id="@+id/btnverNota"
                     android:text="VER NOTAS"

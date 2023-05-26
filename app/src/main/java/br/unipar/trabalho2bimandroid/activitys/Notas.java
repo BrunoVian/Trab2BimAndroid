@@ -1,14 +1,14 @@
-package br.unipar.trabalho2bimandroid;
+package br.unipar.trabalho2bimandroid.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
-import br.unipar.trabalho2bimandroid.R;
 import android.os.Bundle;
+import br.unipar.trabalho2bimandroid.R;
 
-public class MainActivity extends AppCompatActivity {
+public class Notas extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_notas);
     }
 }
