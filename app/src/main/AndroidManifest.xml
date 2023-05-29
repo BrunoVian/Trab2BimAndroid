@@ -12,10 +12,10 @@
         android:theme="@style/Theme.Trabalho2BimAndroid"
         tools:targetApi="31">
         <activity
-            android:name=".Medias"
+            android:name=".activitys.MediasActivity"
             android:exported="false" />
         <activity
-            android:name=".Notas"
+            android:name=".activitys.NotasActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

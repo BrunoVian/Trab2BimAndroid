@@ -1,36 +1,65 @@
 package br.unipar.trabalho2bimandroid.model;
 
 public class NotasAluno {
-    private Aluno aluno;
-    private int nota;
+    private int ra;
+    private String nome;
+    private int priBim;
+    private int segBim;
+    private int terBim;
+    private int quaBim;
     private String disciplina;
-    private String bimestre;
+
 
     public NotasAluno() {
 
     }
 
-    public NotasAluno(Aluno aluno, int nota, String disciplina, String bimestre) {
-        this.aluno = aluno;
-        this.nota = nota;
-        this.disciplina = disciplina;
-        this.bimestre = bimestre;
+    public int getRa() {
+        return ra;
     }
 
-    public Aluno getAluno() {
-        return aluno;
+    public void setRa(int ra) {
+        this.ra = ra;
     }
 
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
+    public String getNome() {
+        return nome;
     }
 
-    public int getNota() {
-        return nota;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setNota(int nota) {
-        this.nota = nota;
+    public int getPriBim() {
+        return priBim;
+    }
+
+    public void setPriBim(int priBim) {
+        this.priBim = priBim;
+    }
+
+    public int getSegBim() {
+        return segBim;
+    }
+
+    public void setSegBim(int segBim) {
+        this.segBim = segBim;
+    }
+
+    public int getTerBim() {
+        return terBim;
+    }
+
+    public void setTerBim(int terBim) {
+        this.terBim = terBim;
+    }
+
+    public int getQuaBim() {
+        return quaBim;
+    }
+
+    public void setQuaBim(int quaBim) {
+        this.quaBim = quaBim;
     }
 
     public String getDisciplina() {
@@ -40,14 +69,5 @@ public class NotasAluno {
     public void setDisciplina(String disciplina) {
         this.disciplina = disciplina;
     }
-
-    public String getBimestre() {
-        return bimestre;
-    }
-
-    public void setBimestre(String bimestre) {
-        this.bimestre = bimestre;
-    }
-
 
 }

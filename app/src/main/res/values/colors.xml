@@ -9,6 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="dark_cyan">#008B8B	</color>
     <color name="verde">#32CD32</color>
+    <color name="cinza">#B8B8B8</color>
+    <color name="roxo">#4A1259</color>
+    <color name="azul_verde">#217373</color>
+
+
 
 
 </resources>
