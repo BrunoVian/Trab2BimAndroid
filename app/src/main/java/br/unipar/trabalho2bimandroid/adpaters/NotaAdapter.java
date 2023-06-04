@@ -50,6 +50,7 @@ public class NotaAdapter extends BaseAdapter {
 
 
         NotasAluno notasAluno = lista.get(position);
+        TextView tvNmAluno = convertView.findViewById(R.id.tvNmAluno);
         TextView tvMateria = convertView.findViewById(R.id.tvMateria);
         TextView tvMedia = convertView.findViewById(R.id.tvMedia);
         TextView tvPriBim = convertView.findViewById(R.id.tvPriBim);
@@ -59,6 +60,7 @@ public class NotaAdapter extends BaseAdapter {
 
 
         tvMateria.setText(notasAluno.getDisciplina());
+        tvNmAluno.setText(tvNmAluno.getText().toString() + notasAluno.getNome());
         tvPriBim.setText(tvPriBim.getText().toString() + notasAluno.getPriBim());
         tvSegBim.setText(tvSegBim.getText().toString() + notasAluno.getSegBim());
         tvTerBim.setText(tvTerBim.getText().toString() + notasAluno.getTerBim());

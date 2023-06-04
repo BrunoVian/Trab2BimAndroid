@@ -11,19 +11,31 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvMateria"
-            android:text=""
+            android:id="@+id/tvNmAluno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp" />
+            android:text=""
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp" />
+
+        <TextView
+            android:id="@+id/tvMateria"
+            android:text=""
+            android:textSize="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="5dp" />
 
         <TextView
             android:id="@+id/tvMedia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Média: "
-            android:layout_marginLeft="80dp"
-            android:layout_marginBottom="10dp" />
+            android:textSize="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="5dp" />
     </LinearLayout>
 
     <LinearLayout

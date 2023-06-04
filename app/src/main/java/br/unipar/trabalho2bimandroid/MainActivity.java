@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spDisciplina;
     private Spinner spBimestre;
     private EditText edNota;
-
     private String disciplinaSelecionada;
     private String bimestreSelecionado;
 
@@ -146,30 +145,33 @@ public class MainActivity extends AppCompatActivity {
         } else if (!edNome.getText().toString().isEmpty()) {
 
             try {
+
                 NotasAluno notasAluno = new NotasAluno();
 
                 int posicaoAluno = -1;
 
-                for(int i=0;i<Globais.listaNotas.size();i++){
+                for (int i = 0; i < Globais.listaNotas.size(); i++) {
 
-                    if(String.valueOf(Globais.listaNotas.get(i).getRa()) == edRa.getText().toString() || Globais.listaNotas.get(i).getNome() == edNome.getText().toString()){
-                        posicaoAluno = i;
-                    }
+//                    if (String.valueOf(Globais.listaNotas.get(i).getRa()).equals(edRa.getText().toString())
+//                            || Globais.listaNotas.get(i).getNome().equals(edNome.getText().toString())) {
+//                        posicaoAluno = i;
+//                    }
 
-                    if(String.valueOf(Globais.listaNotas.get(i).getRa()) == edRa.getText().toString() || Globais.listaNotas.get(i).getNome() == edNome.getText().toString() &&
-                            Globais.listaNotas.get(i).getDisciplina() == disciplinaSelecionada){
+                    if (String.valueOf(Globais.listaNotas.get(i).getRa()).equals(edRa.getText().toString())
+                            && Globais.listaNotas.get(i).getNome().equals(edNome.getText().toString())
+                            && Globais.listaNotas.get(i).getDisciplina().equals(disciplinaSelecionada)) {
                         posicaoAluno = i;
                     }
 
                 }
 
-                if(posicaoAluno == -1){
+                if (posicaoAluno == -1) {
 
                     notasAluno.setNome(edNome.getText().toString());
                     notasAluno.setRa(Integer.parseInt(edRa.getText().toString()));
                     notasAluno.setDisciplina(disciplinaSelecionada);
 
-                    switch (bimestreSelecionado){
+                    switch (bimestreSelecionado) {
                         case "1 Bim":
                             notasAluno.setPriBim(Integer.parseInt(edNota.getText().toString()));
                             break;
@@ -184,32 +186,32 @@ public class MainActivity extends AppCompatActivity {
                             break;
 
                     }
-
                     Globais.listaNotas.add(notasAluno);
                     posicaoAluno = -1;
+                }
 
-                    if(posicaoAluno != -1){
 
-                        Globais.listaNotas.get(posicaoAluno).setNome(edNome.getText().toString());
-                        Globais.listaNotas.get(posicaoAluno).setRa(Integer.parseInt(edRa.getText().toString()));
-                        Globais.listaNotas.get(posicaoAluno).setDisciplina(disciplinaSelecionada);
+                if (posicaoAluno != -1) {
 
-                        switch (bimestreSelecionado){
-                            case "1 Bim":
-                                Globais.listaNotas.get(posicaoAluno).setPriBim(Integer.parseInt(edNota.getText().toString()));
-                                break;
-                            case "2 Bim":
-                                Globais.listaNotas.get(posicaoAluno).setSegBim(Integer.parseInt(edNota.getText().toString()));
-                                break;
-                            case "3 Bim":
-                                Globais.listaNotas.get(posicaoAluno).setTerBim(Integer.parseInt(edNota.getText().toString()));
-                                break;
-                            case "4 Bim":
-                                Globais.listaNotas.get(posicaoAluno).setQuaBim(Integer.parseInt(edNota.getText().toString()));
-                                break;
-                        }
-                        posicaoAluno = -1;
+                    Globais.listaNotas.get(posicaoAluno).setNome(edNome.getText().toString());
+                    Globais.listaNotas.get(posicaoAluno).setRa(Integer.parseInt(edRa.getText().toString()));
+                    Globais.listaNotas.get(posicaoAluno).setDisciplina(disciplinaSelecionada);
+
+                    switch (bimestreSelecionado) {
+                        case "1 Bim":
+                            Globais.listaNotas.get(posicaoAluno).setPriBim(Integer.parseInt(edNota.getText().toString()));
+                            break;
+                        case "2 Bim":
+                            Globais.listaNotas.get(posicaoAluno).setSegBim(Integer.parseInt(edNota.getText().toString()));
+                            break;
+                        case "3 Bim":
+                            Globais.listaNotas.get(posicaoAluno).setTerBim(Integer.parseInt(edNota.getText().toString()));
+                            break;
+                        case "4 Bim":
+                            Globais.listaNotas.get(posicaoAluno).setQuaBim(Integer.parseInt(edNota.getText().toString()));
+                            break;
                     }
+                    posicaoAluno = -1;
                 }
 
 
