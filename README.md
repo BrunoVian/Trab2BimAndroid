@@ -1,2 +1,4 @@
-# Trab2BimAndroid
+# Trabalho do Segundo Bimestre
+# Disciplina de Programação para Dispositivos Móveis
+
  
