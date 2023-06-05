@@ -14,18 +14,18 @@
             android:id="@+id/tvNmAluno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="16dp"
+            android:text="ALUNO"
+            android:layout_weight="1"
             android:textStyle="bold"
             android:layout_marginBottom="5dp" />
 
         <TextView
             android:id="@+id/tvMateria"
-            android:text=""
+            android:text="MATERIA"
             android:textSize="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
             android:layout_marginBottom="5dp" />
 
         <TextView
@@ -34,7 +34,8 @@
             android:layout_height="wrap_content"
             android:text="Média: "
             android:textSize="16dp"
-            android:layout_marginLeft="20dp"
+            android:gravity="end"
+            android:layout_weight="1"
             android:layout_marginBottom="5dp" />
     </LinearLayout>
 
@@ -47,26 +48,27 @@
             android:id="@+id/tvPriBim"
             android:layout_width="wrap_content"
             android:text="1°Bim: "
+            android:layout_weight="1"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tvSegBim"
             android:layout_width="wrap_content"
             android:text="2°Bim: "
-            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tvTerBim"
             android:text="3°Bim: "
-            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tvQuaBim"
             android:text="4°Bim: "
-            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>

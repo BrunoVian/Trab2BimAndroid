@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     private String disciplinaSelecionada;
     private String bimestreSelecionado;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,16 +94,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if (Globais.listaNotas == null) {
-            Globais.listaNotas = new ArrayList<>();
-        }
-
         btnAdiconar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 salvarAluno();
             }
         });
+
+        if (Globais.listaNotas == null) {
+            Globais.listaNotas = new ArrayList<>();
+        }
 
     }
 
@@ -127,7 +126,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void salvarAluno() {
-
+        int nota = 0;
+        if (!edNota.getText().toString().isEmpty()) {
+            nota = Integer.parseInt(edNota.getText().toString());
+        }
         if (edNome.getText().toString().isEmpty()) {
             edNome.setError("Informe o Nome do Aluno");
         }
@@ -137,12 +139,16 @@ public class MainActivity extends AppCompatActivity {
         if (edRa.getText().toString().isEmpty()) {
             edRa.setError("Informe o RA do Aluno");
         }
-        if (spBimestre.getSelectedItemPosition() == 0) {
+        if (spBimestre.getSelectedItemPosition() == 0 || !spBimestre.isSelected()) {
             setSpinnerError(spBimestre, "Informe o Bimestre");
         }
-        if (spDisciplina.getSelectedItemPosition() == 0) {
+        if (spDisciplina.getSelectedItemPosition() == 0 || !spDisciplina.isSelected()) {
             setSpinnerError(spDisciplina, "Informe a Disciplina");
-        } else if (!edNome.getText().toString().isEmpty()) {
+        }
+        if (nota < 0 || nota > 100) {
+            edNota.setError("Informe uma nota entre 0 e 100");
+        }
+        else if (!edNome.getText().toString().isEmpty()) {
 
             try {
 
@@ -152,17 +158,11 @@ public class MainActivity extends AppCompatActivity {
 
                 for (int i = 0; i < Globais.listaNotas.size(); i++) {
 
-//                    if (String.valueOf(Globais.listaNotas.get(i).getRa()).equals(edRa.getText().toString())
-//                            || Globais.listaNotas.get(i).getNome().equals(edNome.getText().toString())) {
-//                        posicaoAluno = i;
-//                    }
-
                     if (String.valueOf(Globais.listaNotas.get(i).getRa()).equals(edRa.getText().toString())
                             && Globais.listaNotas.get(i).getNome().equals(edNome.getText().toString())
                             && Globais.listaNotas.get(i).getDisciplina().equals(disciplinaSelecionada)) {
                         posicaoAluno = i;
                     }
-
                 }
 
                 if (posicaoAluno == -1) {
@@ -214,25 +214,20 @@ public class MainActivity extends AppCompatActivity {
                     posicaoAluno = -1;
                 }
 
-
                 Toast.makeText(this,
                         "Aluno Salvo com Sucesso!",
                         Toast.LENGTH_LONG).show();
-
                 limpaCampos();
 
             } catch (Exception ex) {
                 Log.e("ERRO SALVAR ALUNO: ", ex.getMessage());
             }
         }
-
     }
 
     private void limpaCampos() {
 
         try {
-            //edNome.setText(null);
-            //edRa.setText(null);
             edNota.setText("0");
             spDisciplina.setSelection(0);
             spBimestre.setSelection(0);

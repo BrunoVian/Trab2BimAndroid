@@ -1,6 +1,7 @@
 package br.unipar.trabalho2bimandroid.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,7 +17,6 @@ import br.unipar.trabalho2bimandroid.globais.Globais;
 import br.unipar.trabalho2bimandroid.model.NotasAluno;
 
 public class NotasActivity extends AppCompatActivity {
-
     private ListView lvNotas;
     private Spinner spAluno;
 
@@ -28,15 +28,18 @@ public class NotasActivity extends AppCompatActivity {
         lvNotas = findViewById(R.id.lvNotas);
         spAluno = findViewById(R.id.spAluno);
 
-        String[] vetorAlunos = new String[Globais.listaNotas.size() + 1];
+        ArrayList<String> arrayAlunos = new ArrayList<>();
 
-        vetorAlunos[0] = "Todos";
+        arrayAlunos.add("Todos");
 
-        for (int i =0; i< Globais.listaNotas.size();i++){
-            vetorAlunos[i+1] = Globais.listaNotas.get(i).getNome();
+        for (int i = 0; i < Globais.listaNotas.size(); i++) {
+            String nome = Globais.listaNotas.get(i).getNome();
+            if (!arrayAlunos.contains(nome)) {
+                arrayAlunos.add(nome);
+            }
         }
 
-        ArrayAdapter adapterAlunos = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,vetorAlunos);
+        ArrayAdapter adapterAlunos = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayAlunos);
 
         spAluno.setAdapter(adapterAlunos);
 
@@ -51,27 +54,23 @@ public class NotasActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 
-    private void atualizaLista(ArrayList<NotasAluno> lista, int alunoSelecionado){
+    private void atualizaLista(ArrayList<NotasAluno> lista, int alunoSelecionadoPosicao) {
 
         ArrayList<NotasAluno> listaFiltrada = new ArrayList<>();
 
-        if (alunoSelecionado == 0) {
+        if (alunoSelecionadoPosicao == 0) {
             listaFiltrada.addAll(lista);
         } else {
-            String nomeAlunoSelecionado = lista.get(alunoSelecionado - 1).getNome();
-            for (NotasAluno notasAluno : lista) {
-                if (notasAluno.getNome().equals(nomeAlunoSelecionado)) {
-                    listaFiltrada.add(notasAluno);
+            for (int i = 0; i < lista.size(); i++) {
+                String nomeAlunoSelecionado = spAluno.getItemAtPosition(alunoSelecionadoPosicao).toString();
+                if (lista.get(i).getNome().equals(nomeAlunoSelecionado)) {
+                    listaFiltrada.add(lista.get(i));
                 }
             }
         }
-
         NotaAdapter adapter = new NotaAdapter(this, listaFiltrada);
         lvNotas.setAdapter(adapter);
     }
-
 }

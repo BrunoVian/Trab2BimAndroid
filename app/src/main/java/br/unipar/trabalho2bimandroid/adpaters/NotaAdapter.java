@@ -41,13 +41,15 @@ public class NotaAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if(convertView == null){
+        if (convertView == null) {
             convertView = LayoutInflater.from(context).
                     inflate(R.layout.item_list_notas_aluno,
                             parent, false);
         }
 
+        int media = 0;
 
+        media = (lista.get(position).getPriBim() + lista.get(position).getSegBim() + lista.get(position).getTerBim() + lista.get(position).getQuaBim()) / 4;
 
         NotasAluno notasAluno = lista.get(position);
         TextView tvNmAluno = convertView.findViewById(R.id.tvNmAluno);
@@ -58,13 +60,13 @@ public class NotaAdapter extends BaseAdapter {
         TextView tvTerBim = convertView.findViewById(R.id.tvTerBim);
         TextView tvQuaBim = convertView.findViewById(R.id.tvQuaBim);
 
-
         tvMateria.setText(notasAluno.getDisciplina());
-        tvNmAluno.setText(tvNmAluno.getText().toString() + notasAluno.getNome());
+        tvNmAluno.setText(notasAluno.getNome());
         tvPriBim.setText(tvPriBim.getText().toString() + notasAluno.getPriBim());
         tvSegBim.setText(tvSegBim.getText().toString() + notasAluno.getSegBim());
         tvTerBim.setText(tvTerBim.getText().toString() + notasAluno.getTerBim());
         tvQuaBim.setText(tvQuaBim.getText().toString() + notasAluno.getQuaBim());
+        tvMedia.setText(tvMedia.getText().toString() + media);
         return convertView;
 
     }
