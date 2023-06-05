@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp"
+    android:background="@color/fundo"
     tools:context=".activitys.NotasActivity">
 
 
@@ -16,14 +17,16 @@
         android:gravity="center"
         android:text="Relação de Médias"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/backgroud_title"
+        />
 
     <TextView
         android:id="@+id/tvDisciplina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Disciplina"
+        android:text="Selecione a Disciplina:"
         android:textSize="15dp"
         android:textStyle="bold" />
 
@@ -33,7 +36,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/border"
+        android:background="@drawable/border_spinner"
         android:contentDescription="Selecione a Disciplina"
         android:padding="10dp" />
 
@@ -49,7 +52,8 @@
             <ListView
                 android:id="@+id/lvMedias"
                 android:layout_width="match_parent"
-                android:layout_height="544dp"/>
+                android:layout_height="544dp"
+                />
 
         </LinearLayout>
 

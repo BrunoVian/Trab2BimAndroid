@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:padding="15dp"
+    android:background="@color/fundo"
     android:orientation="vertical">
 
     <ScrollView
@@ -22,17 +23,20 @@
                 android:id="@+id/txtTitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CADASTRO DE NOTA DE ALUNO"
+                android:text="Cadastro de Nota de Aluno"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:layout_margin="5dp"/>
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:textAllCaps="false"
+                android:background="@drawable/backgroud_title"/>
 
             <TextView
                 android:id="@+id/tvRA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="RA"
+                android:text="RA:"
                 android:textSize="15dp"
                 android:textStyle="bold"
                 android:layout_marginHorizontal="20dp"
@@ -54,7 +58,7 @@
                 android:id="@+id/tvNome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NOME"
+                android:text="NOME:"
                 android:textSize="15dp"
                 android:textStyle="bold"
                 android:layout_marginHorizontal="20dp"
@@ -75,7 +79,7 @@
                 android:id="@+id/tvDisciplina"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DISCIPLINA"
+                android:text="Selecione a Disciplina:"
                 android:textSize="15dp"
                 android:textStyle="bold"
                 android:layout_marginHorizontal="20dp"
@@ -90,7 +94,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/border"/>
+                android:background="@drawable/border_spinner"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -109,11 +113,11 @@
 
             <TextView
                 android:id="@+id/tvBim"
-                android:layout_width="94dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="120dp"
                 android:layout_marginTop="10dp"
-                android:text="BIMESTRE"
+                android:text="Selecione o Bimestre:"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -131,8 +135,8 @@
                     android:id="@+id/edNota"
                     android:layout_width="116dp"
                     android:layout_height="50dp"
-                    android:layout_marginVertical="10dp"
-                    android:background="@drawable/border_spinner"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/border"
                     android:hint="0"
                     android:inputType="number"
                     android:padding="10dp"/>
@@ -140,10 +144,10 @@
 
                 <Spinner
                     android:id="@+id/spBimestre"
-                    android:layout_width="120dp"
+                    android:layout_width="165dp"
                     android:layout_height="50dp"
                     android:layout_marginHorizontal="60dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/border_spinner"
                     android:contentDescription="Selecione"
                     android:orientation="vertical"
@@ -165,6 +169,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:padding="10dp"
+                    android:backgroundTint="@color/verde"
                     />
 
                 <Button
@@ -175,6 +180,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginHorizontal="40dp"
                     android:padding="10dp"
+                    android:backgroundTint="@color/azul"
                     />
                 <Button
                     android:id="@+id/btnverMedia"
@@ -183,6 +189,8 @@
                     android:layout_height="50dp"
                     android:layout_marginHorizontal="40dp"
                     android:padding="10dp"
+                    android:backgroundTint="@color/laranja"
+
                     />
             </LinearLayout>
         </LinearLayout>
